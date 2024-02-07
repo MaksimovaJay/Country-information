@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
-import {Country} from "../../types";
+import { Country } from '../../types';
 import {COUNTRY_LIST_URL} from "../../constants";
-
 
 interface Props {
   onCountrySelect: (alpha3Code: string) => void;
@@ -25,7 +24,7 @@ const ListCountries: React.FC<Props> = ({ onCountrySelect }) => {
   };
 
   const countryNameList = countries.map((country) => (
-    <li className="list-group-item countyListItem" key={country.alpha3Code} onClick={() => handleCountryClick(country.alpha3Code)}>
+    <li className="countyListItem  list-group-item " key={country.alpha3Code} onClick={() => handleCountryClick(country.alpha3Code)}>
       <a className="text-white rounded text-decoration-none">
         {country.name}
       </a>
